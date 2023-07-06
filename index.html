@@ -11,7 +11,7 @@
 <body>
 <div class="card">
     <div class="search">
-        <input type="text" placeholder="Enter city name" spellcheck="false">
+        <input type="text" placeholder="enter city name" spellcheck="false">
         <button><img src="images/search.png"></button>
 
     </div>
@@ -37,7 +37,17 @@
         </div>
     </div>
 </div>
+<script>
+    const apiKey="d227b2698db9d5fcf6facb58d8597d28";
+    const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=bangalore";
 
+    async function checkWeather(){
+        const response = await fetch(apiUrl + `&appid=${apiKey}`);
+        var data=await response.json();
+        console.log(data);
+    }
+    checkWeather();
+</script>
 
 </body>
 </html>
